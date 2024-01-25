@@ -22,6 +22,10 @@ app.get("/", (req, res) => {
   res.send(`API is Running on port131313 ${PORT}`);
 });
 
+app.get("/test", (req, res) => {
+  res.send(`test API is Running on port131313 ${PORT}`);
+});
+
 app.get("/inventoryProducts", async (req, res) => {
   const products = await getInventory();
   res.status(200).json(products);
