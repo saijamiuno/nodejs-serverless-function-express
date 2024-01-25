@@ -1,9 +1,11 @@
+require("dotenv").config()
 const express = require("express");
 const fs = require("fs");
 const parse = require("csv-parser");
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 
-const uri = `mongodb+srv://saijami:EcUpT3Et6dpojJz3@atlascluster.iotmmxp.mongodb.net/?retryWrites=true&w=majority`;
+// const uri = `mongodb+srv://saijami:EcUpT3Et6dpojJz3@atlascluster.iotmmxp.mongodb.net/?retryWrites=true&w=majority`;
+const uri = process.env.MONGO_URL;
 
 const client = new MongoClient(uri, {
   serverApi: {
@@ -152,7 +154,7 @@ const readMoviesCSV = async (filePath) => {
 const moivesPath = "./CSV/moviesDB.csv";
 // readMoviesCSV(moivesPath);
 
-const PORT = 5000;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
