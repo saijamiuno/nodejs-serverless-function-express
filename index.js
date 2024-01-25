@@ -34,7 +34,7 @@ app.get("/inventoryProducts", async (req, res) => {
 const getInventory = async () => {
   try {
     const result = await collection.find().toArray();
-    return result.slice(0, 100);
+    return result.slice(0, 20);
   } catch (error) {
     console.log(`ERROR : ${error}`);
   }
