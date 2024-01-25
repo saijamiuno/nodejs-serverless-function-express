@@ -23,7 +23,8 @@ app.get("/", (req, res) => {
 });
 
 app.get("/test", (req, res) => {
-  res.send(`test API is Running on port131313 ${PORT}`);
+  // res.send(`test API is Running on port131313 ${PORT}`);
+  res.json("success");
 });
 
 app.get("/inventoryProducts", async (req, res) => {
