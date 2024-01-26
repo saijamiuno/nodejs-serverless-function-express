@@ -43,7 +43,8 @@ const getInventory = async () => {
     const result = await collection.find().toArray();
     return result.slice(0, 20);
   } catch (error) {
-    console.log(`ERROR : ${error}`);
+    console.error(`ERROR: ${error}`);
+    throw error;
   }
 };
 
