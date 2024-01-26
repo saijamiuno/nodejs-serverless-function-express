@@ -48,7 +48,7 @@ const getInventory = async () => {
   }
 };
 
-app.get("/moviesList", async (req, res) => {
+app.get("/movies", async (req, res) => {
   try {
     const movies = await getMovies();
     res.status(200).json(movies);
