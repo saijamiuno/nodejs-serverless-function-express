@@ -3,8 +3,8 @@ const fs = require("fs");
 const parse = require("csv-parser");
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 
-// const uri = `mongodb+srv://saijami:EcUpT3Et6dpojJz3@atlascluster.iotmmxp.mongodb.net/?retryWrites=true&w=majority`;
-const uri = process.env.MONGO_URL;
+const uri = `mongodb+srv://saijami:EcUpT3Et6dpojJz3@atlascluster.iotmmxp.mongodb.net/?retryWrites=true&w=majority`;
+// const uri = process.env.MONGO_URL;
 
 const client = new MongoClient(uri, {
   serverApi: {
