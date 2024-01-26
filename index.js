@@ -1,4 +1,3 @@
-require("dotenv").config()
 const express = require("express");
 const fs = require("fs");
 const parse = require("csv-parser");
@@ -21,12 +20,17 @@ const app = express();
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send(`API is Running on port131313 ${PORT}`);
+  res.send(`API is Running on ${PORT}`);
 });
 
 app.get("/test", (req, res) => {
-  // res.send(`test API is Running on port131313 ${PORT}`);
+  res.send(`Test API is Running on  ${PORT}`);
   res.json("success");
+});
+app.get("/test1", (req, res) => {
+  res.send(`Test1 API is Running on  ${PORT}`);
+  res.json("success1");
+  console.log("success1")
 });
 
 app.get("/inventoryProducts", async (req, res) => {
