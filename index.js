@@ -48,6 +48,30 @@ const getInventory = async () => {
   }
 };
 
+app.get("/movies", async (req, res) => {
+  try {
+    const movies = await getMovies();
+    res.status(200).json(movies);
+  } catch (error) {
+    console.error(`ERROR: ${error}`);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+const getMovies = async () => {
+  try {
+    const result = await client
+      .db("royal")
+      .collection("products")
+      .find()
+      .toArray();
+    return result.slice(0, 20);
+  } catch (error) {
+    console.error(`ERROR: ${error}`);
+    throw error;
+  }
+};
+
 app.get("/getProductDetail/:id", async (req, res) => {
   const user = await getUserById(req.params.id);
   res.status(200).json(user);
