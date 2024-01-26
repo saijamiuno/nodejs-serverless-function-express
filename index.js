@@ -30,7 +30,7 @@ app.get("/test", (req, res) => {
 app.get("/test1", (req, res) => {
   res.send(`Test1 API is Running on  ${PORT}`);
   res.json("success1");
-  console.log("success1")
+  console.log("success1");
 });
 
 app.get("/inventoryProducts", async (req, res) => {
