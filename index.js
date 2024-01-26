@@ -65,7 +65,7 @@ const getMovies = async () => {
       .collection("products")
       .find()
       .toArray();
-    return result.slice(0, 20);
+    return result;
   } catch (error) {
     console.error(`ERROR: ${error}`);
     throw error;
