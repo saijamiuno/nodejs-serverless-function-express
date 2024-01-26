@@ -13,8 +13,8 @@ const client = new MongoClient(uri, {
     deprecationErrors: true,
   },
 });
-const dataBase = client.db("royal");
-const collection = dataBase.collection("products");
+const dataBase = client.db("mongodbVSCodePlaygroundDB");
+const collection = dataBase.collection("sales");
 
 const app = express();
 app.use(express.json());
